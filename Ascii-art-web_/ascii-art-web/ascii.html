@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Ascii-art-web</title>
+        <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <meta http-equiv="Content-type" content="text/html; charset=windows-1251">
+</head>
+<body class="bg-gray-300">
+    <main>
+        <div align="center">
+            <h1 class="text-lg font-black text-gray-700 py-3">ASCII ART GENERATOR</h1>
+        </div>
+        <div align="center">
+            <form method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                <textarea
+                class="rounded-lg border-double border-8 border-gray-500"
+                placeholder="Type something..."
+                rows="8"
+                cols="60"
+                type="text"
+                name="input"
+                id="input"
+                /></textarea>
+                <div align="center">
+                    <select name="choice" class="bg-gray-500 hover:bg-gray-400 text-white font-bold py-2 px-4 border-b-4 border-gray-700 hover:border-gray-500 rounded">
+                        <option class="block text-gray-700 text-sm font-bold mb-2" value="standard" name="">standard</option>
+                        <option class="block text-gray-700 text-sm font-bold mb-2" value="shadow" name="">shadow</option>
+                        <option class="block text-gray-700 text-sm font-bold mb-2" value="thinkertoy" name="">thinkertoy</option>
+                    </select> 
+                    <button class="bg-gray-500 hover:bg-gray-400 text-white font-bold py-2 px-4 border-b-4 border-gray-700 hover:border-gray-500 rounded" type="submit">
+                        Submit
+                    </button>
+                </div>
+            </form>
+
+            <div align="center">
+                <pre name="output">{{.Output}}</pre> 
+    
+            </div>
+            <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                <ol class="list-decimal">
+                    <li class="block text-gray-700 text-sm font-bold mb-2 text-3xl">
+                        1. Please, type something into the box
+                    </li>
+                    <li class="block text-gray-700 text-sm font-bold mb-2 text-3xl">
+                        2. Select text-style
+                    </li>
+                    <li class="block text-gray-700 text-sm font-bold mb-2 text-3xl">
+                        3. Click Submit
+                    </li>
+                    <li class="block text-gray-700 text-sm font-bold mb-2 text-3xl">
+                        4. Enjoy!
+                    </li>
+                </ol>
+            </div>
+            <div>
+
+            </div>
+
+
+        </div>
+    </main>
+    
+
+</body>
+</html>
+
