@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap");
+body {
+  background-color: #edf2f7;
+  font-family: "Raleway", sans-serif;
+  padding: 0;
+  padding-bottom: 25px;
+  margin: 0;
+}
+
+.header {
+  padding: 15px;
+  margin: 0;
+  margin-bottom: 50px;
+  background-color: #cbd5e0;
+}
+
+.logo {
+  text-align: center;
+  margin: 0;
+  font-size: 42px;
+  font-family: inherit;
+  font-weight: 700;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin: 0 auto;
+}
+
+.card {
+  margin: 10px;
+  padding: auto;
+  float: left;
+  border: 10px solid #742a2a;
+  width: 240px;
+  height: 240px;
+  text-align: center;
+  position: relative;
+}
+
+.mask {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  vertical-align: bottom;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.card:hover .mask {
+  opacity: 1;
+}

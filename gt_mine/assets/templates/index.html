@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link href="assets/style/index.css" rel="stylesheet" />
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header class="header" id="top-header">
+      <h1 class="logo">Groupie Tracker</h1>
+    </header>
+    <div>
+      <form action="/search" method="POST">
+        <div class="pl-64">
+          <input
+            class="object-center form-input mt-2 h-10 w-64" 
+            list="search-bar"
+            id="search-input"
+            name="search-bar"
+            placeholder="type ..."
+            autocomplete="off"
+          />
+          <datalist id="search-bar">
+            {{range .}}
+            <option value="{{.Name}}"> </option>
+            {{range .Members}}
+            <option value="{{.}}"> </option>
+            {{end}}
+            <option value="{{.CreationDate}}"> </option>
+            <option value="{{.FirstAlbum}}"></option>
+            {{range $key, $value := .RelationData.DatesLocations}}
+
+            <option value="{{$key}}"></option>
+            {{range $value}}
+
+            <option value="{{.}}"></option>
+            {{end}} 
+            {{end}} {{end}}
+          </datalist>
+        
+
+        <input class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" type="submit" value="Search" />
+          </div>
+      </form>
+    </div>
+    <div class="container">
+      {{range .}}
+      <a href="artist/?id={{ .ID }}" class="card">
+        <img src="{{.Image}}" alt="{{.Name}}" />
+      </a>
+      {{end}}
+    </div>
+
+    <script>
+      window.onscroll = function () {
+        scrollFunc();
+      };
+
+      var header = document.getElementById("top-header");
+      var sticky = header.offsetTop;
+
+      function scrollFunc() {
+        if (window.pageYOffset > sticky) {
+          header.classList.add("sticky");
+        } else {
+          header.classList.remove("sticky");
+        }
+      }
+    </script>
+  </body>
+</html>

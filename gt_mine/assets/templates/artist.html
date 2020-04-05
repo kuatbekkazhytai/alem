@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Artist</title>
+    <!-- <link href="assets/style/index.css" rel="stylesheet" /> -->
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="flex justify-center w-full">
+      <div class="max-w-xl rounded overflow-hidden shadow-lg">
+        <header>
+          <h1 class="text-center font-bold text-3xl mb-6">{{.Name}}</h1>
+        </header>
+        <main class="bg-gray-200">
+          <img class="w-full" src="{{.Image}}" alt="{{.Name}}" />
+
+          <div class="px-6 py-4 bg-gray-500 px-4">
+            <div class="font-bold text-xl text-center mb-2">Members</div>
+            <ul class="text-gray-700 text-base list-disc">
+              {{range .Members}}
+              <li>{{.}}</li>
+              {{end}}
+            </ul>
+          </div>
+          <div class="px-6 py-4">
+            <div class="font-bold text-xl text-center mb-2">Creation Date</div>
+            <ul>
+              <li>{{.CreationDate}}</li>
+            </ul>
+          </div>
+          <div class="px-6 py-4 bg-gray-500">
+            <div class="font-bold text-xl text-center mb-2">First Album</div>
+            <ul>
+              <li>{{.CreationDate}}</li>
+            </ul>
+          </div>
+
+          <details>
+            <summary class="font-bold text-xl mb-2">Concert locations</summary>
+
+            {{range $key, $value := .RelationData.DatesLocations}}
+            <p class="italic text-center">{{$key}}</p>
+            {{range $value}}
+            <p class="list-disc text-center">{{.}}</p>
+            {{end}} {{end}}
+          </details>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
